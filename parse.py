@@ -20,7 +20,9 @@ from dbconfig import db_config
 class TeluguMovie():
 	"""
 	builds a TeluguMovie class with the following attributes:
-	movie_id, movie_name, movie_url, movie_release_date, movie_rating
+	movie_id, movie_name, movie_url, movie_release_date, movie_rating.
+
+	Status: Incomplete.
 	"""
 	def __init__(self):
 		self.movie_id = 1
@@ -39,6 +41,8 @@ def lookup_reviews_by_category(start_date, end_date):
 	Output
 	=======
 	number of reviews in each category [1-5 rating scale]
+
+	Status: Not working as expected.
 	"""
 	cursor, db = db_config.db_config()
 	query = "SELECT * FROM idlebrain_reviews WHERE movie_release_date>=%s AND movie_release_date<=%s"
@@ -257,7 +261,7 @@ def insert_to_rdb():
 	"""
 	inserts all content from data.csv to MySQL database
 
-	NO LONGER NEEDED.
+	Status: NO LONGER NEEDED.
 	"""
 	cursor = db_config.db_config()
 	for row in file("data.csv"):
