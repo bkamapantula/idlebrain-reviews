@@ -1,5 +1,3 @@
-db_config*
-tables.sql
-data.csv
-data.html
 data/*
+*.db
+*.csv
